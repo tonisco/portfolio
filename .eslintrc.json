@@ -11,5 +11,10 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off"
-  }
+  },
+  "ignorePatterns": [
+    "postcss.config.js",
+    "tailwind.config.js",
+    "next.config.js"
+  ]
 }

@@ -4,7 +4,9 @@
   "jsxSingleQuote": false,
   "semi": false,
   "singleQuote": false,
+  "plugins": ["prettier-plugin-tailwindcss"],
   "printWidth": 80,
   "tabWidth": 2,
+  "tailwindConfig": "./tailwind.config",
   "trailingComma": "all"
 }
