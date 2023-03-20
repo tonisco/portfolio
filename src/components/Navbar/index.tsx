@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { IoMenu } from "react-icons/io5"
+import { IoClose, IoMenu } from "react-icons/io5"
+import { AnimatePresence, motion } from "framer-motion"
 
 function Navbar() {
   const [showSidebar, setShowSideBar] = useState(false)
@@ -47,15 +48,34 @@ function Navbar() {
         className="block text-3xl text-slate-700 md:hidden"
         onClick={() => setSidebar(true)}
       />
-      {showSidebar && (
-        <>
-          <div
+      <AnimatePresence>
+        {showSidebar && (
+          <motion.div
             className="fixed left-0 top-0 block h-screen w-screen bg-black bg-opacity-50 md:hidden"
             onClick={() => setSidebar(false)}
-            onKeyDown={() => setSidebar(false)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ ease: "easeInOut", duration: 0.5 }}
           />
-          <nav className="fixed left-0 top-0 flex h-screen w-[320px] flex-col gap-10 bg-white px-6 pt-8 shadow md:hidden">
-            <h1 className="font-acme text-3xl text-slate-700">{`< Tonisco />`}</h1>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {showSidebar && (
+          <motion.nav
+            className="fixed left-0 top-0 flex h-screen w-[320px] flex-col gap-10 bg-white px-6 pt-8 shadow md:hidden"
+            initial={{ x: -320 }}
+            animate={{ x: 0 }}
+            exit={{ x: -320 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+          >
+            <div className="flex justify-between">
+              <h1 className="font-acme text-3xl text-slate-700">{`< Tonisco />`}</h1>
+              <IoClose
+                className="text-3xl text-slate-700"
+                onClick={() => setSidebar(false)}
+              />
+            </div>
             <ul className=" flex flex-col gap-6 ">
               <li>
                 <a
@@ -90,9 +110,9 @@ function Navbar() {
                 </a>
               </li>
             </ul>
-          </nav>
-        </>
-      )}
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }
