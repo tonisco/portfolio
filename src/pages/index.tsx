@@ -11,7 +11,9 @@ const manrope = Manrope({ subsets: ["greek"], variable: "--manrope-font" })
 
 export default function Home() {
   return (
-    <div className={`${acme.variable} ${manrope.variable}`}>
+    <div
+      className={`${acme.variable} ${manrope.variable} bg-white dark:bg-slate-700`}
+    >
       <Navbar />
     </div>
   )
