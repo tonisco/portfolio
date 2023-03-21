@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero"
 import Navbar from "@/components/Navbar"
 import { Acme, Manrope } from "next/font/google"
 
@@ -14,7 +15,10 @@ export default function Home() {
     <div
       className={`${acme.variable} ${manrope.variable} bg-white dark:bg-slate-700`}
     >
-      <Navbar />
+      <div className="flex h-screen w-screen flex-col">
+        <Navbar />
+        <Hero />
+      </div>
     </div>
   )
 }

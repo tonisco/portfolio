@@ -1,8 +1,62 @@
+import Typed from "react-typed"
+import { FaLinkedin, FaGithub } from "react-icons/fa"
+
 function Hero() {
+  let typedRef: { cursor: { remove: () => void } }
+  let typedRef1: { cursor: { remove: () => void } }
+
   return (
-    <div>
-      <h1>this is the hero</h1>
-    </div>
+    <main className="container mx-auto flex flex-1 items-center xl:w-5/6">
+      <div className="flex h-full flex-col justify-center gap-5">
+        <Typed
+          strings={["Hello 👋, I'm Umeozulu Anthony"]}
+          typeSpeed={40}
+          typedRef={(typed: any) => {
+            typedRef = typed
+          }}
+          onComplete={() => {
+            typedRef?.cursor.remove()
+          }}
+          className="font-manrope text-2xl font-bold text-slate-700 dark:text-white"
+        />
+
+        <Typed
+          className="font-manrope text-5xl font-bold capitalize text-slate-700 dark:text-white"
+          strings={[
+            "frontend developer",
+            "backend developer",
+            "mobile developer",
+            "fullstack developer",
+          ]}
+          typeSpeed={40}
+          backSpeed={30}
+          backDelay={1200}
+          startDelay={1800}
+          typedRef={(typed: any) => {
+            typedRef1 = typed
+          }}
+          onComplete={() => {
+            typedRef1?.cursor.remove()
+          }}
+        />
+        <p className="max-w-3xl font-manrope text-base font-semibold tracking-wide text-slate-700 dark:text-gray-300">
+          I solve problems and make responsive designs, robust APIs and scalable
+          softwares, test and maintain applications .
+        </p>
+        <div className="flex gap-4">
+          <a href="https://github.com/tonisco" target="_blank" rel="noreferrer">
+            <FaGithub className="text-2xl text-slate-700 dark:text-white" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ugonna-anthony-532605ab"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedin className="text-2xl text-blue-600 dark:text-white" />
+          </a>
+        </div>
+      </div>
+    </main>
   )
 }
 
