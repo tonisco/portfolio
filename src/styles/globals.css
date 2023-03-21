@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.link {
+  @apply px-4 font-manrope text-base font-bold capitalize text-slate-700 dark:text-slate-50;
+}
+
+.side-link {
+  @apply font-manrope text-base font-bold capitalize text-slate-700 dark:text-slate-50;
+}
+
 .underline-text {
   @apply relative;
 }

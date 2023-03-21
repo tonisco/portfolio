@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { IoClose, IoMenu, IoMoon, IoSunny } from "react-icons/io5"
 import { AnimatePresence, motion, spring } from "framer-motion"
 import { useTheme } from "next-themes"
+import Link from "next/link"
 
 function Navbar() {
   const [showSidebar, setShowSideBar] = useState(false)
@@ -29,36 +30,24 @@ function Navbar() {
       <main className="flex items-center gap-4">
         <ul className="hidden gap-4 md:flex">
           <li>
-            <a
-              className="px-4 font-manrope text-base font-bold capitalize text-slate-700 dark:text-white"
-              href="home"
-            >
+            <Link className="link" href="home">
               home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              className="px-4 font-manrope text-base font-bold capitalize text-slate-700 dark:text-white"
-              href="home"
-            >
+            <Link className="link" href="#about">
               about
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              className="px-4 font-manrope text-base font-bold capitalize text-slate-700 dark:text-white"
-              href="home"
-            >
-              project
-            </a>
+            <Link className="link" href="home">
+              projects
+            </Link>
           </li>
           <li>
-            <a
-              className="px-4 font-manrope text-base font-bold capitalize text-slate-700 dark:text-white"
-              href="home"
-            >
+            <Link className="link" href="home">
               contact
-            </a>
+            </Link>
           </li>
         </ul>
         <IoMenu
@@ -119,36 +108,24 @@ function Navbar() {
             </div>
             <ul className=" flex flex-col gap-6 ">
               <li>
-                <a
-                  className="font-manrope text-base font-bold capitalize text-slate-700 dark:text-white"
-                  href="home"
-                >
+                <Link className="side-link" href="home">
                   home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="font-manrope text-base font-bold capitalize text-slate-700 dark:text-white"
-                  href="home"
-                >
+                <Link className="side-link" href="home">
                   about
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="font-manrope text-base font-bold capitalize text-slate-700 dark:text-white"
-                  href="home"
-                >
-                  project
-                </a>
+                <Link className="side-link" href="home">
+                  projects
+                </Link>
               </li>
               <li>
-                <a
-                  className="font-manrope text-base font-bold capitalize text-slate-700 dark:text-white"
-                  href="home"
-                >
+                <Link className="side-link" href="home">
                   contact
-                </a>
+                </Link>
               </li>
             </ul>
           </motion.nav>
