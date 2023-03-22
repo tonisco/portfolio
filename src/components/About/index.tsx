@@ -31,6 +31,7 @@ function About() {
         <motion.h1
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ ease: "easeOut", duration: 0.5 }}
           className="underline-text mb-4 w-auto font-manrope text-4xl font-bold text-slate-700 dark:text-white"
         >
@@ -40,6 +41,7 @@ function About() {
       <motion.p
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ ease: "easeOut", duration: 0.5 }}
         className="max-w-3xl font-manrope text-lg font-semibold tracking-wide text-slate-500 dark:text-slate-50"
       >
@@ -55,6 +57,7 @@ function About() {
       <motion.h3
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ ease: "easeOut", duration: 0.5 }}
         className="mt-8 w-auto font-manrope text-2xl font-bold text-slate-700 dark:text-slate-50"
       >
@@ -63,6 +66,7 @@ function About() {
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ ease: "easeOut", duration: 0.5 }}
         className="flex max-w-3xl flex-wrap gap-4"
       >

@@ -40,7 +40,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link className="link" href="home">
+            <Link className="link" href="#projects">
               projects
             </Link>
           </li>
@@ -118,7 +118,7 @@ function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link className="side-link" href="home">
+                <Link className="side-link" href="#projects">
                   projects
                 </Link>
               </li>

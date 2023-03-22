@@ -39,7 +39,7 @@ function Contact() {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
-          className="underline-text mb-4 w-auto font-manrope text-4xl font-bold text-slate-700 dark:text-white"
+          className="underline-text mb-8 w-auto font-manrope text-4xl font-bold text-slate-700 dark:text-white"
         >
           Contact
         </motion.h1>
