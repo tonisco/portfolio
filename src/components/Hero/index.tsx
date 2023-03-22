@@ -9,7 +9,6 @@ function Hero() {
     <main className="container mx-auto flex flex-1 items-center px-4 xl:w-5/6">
       <div className="flex h-full flex-col justify-center gap-5">
         <p className="flex gap-2 font-manrope text-2xl font-bold text-slate-700 dark:text-slate-50">
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
           Hello 👋, I'm
           <Typed
             strings={["Umeozulu Anthony"]}

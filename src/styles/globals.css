@@ -19,7 +19,7 @@
 }
 
 .skill {
-  @apply flex items-center gap-2 rounded-lg bg-stone-50 p-3 shadow-lg dark:bg-slate-800;
+  @apply flex cursor-default items-center gap-2 rounded-lg bg-stone-50 p-3 shadow-lg dark:bg-slate-800;
 }
 
 .skill-icon {

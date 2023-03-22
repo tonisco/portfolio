@@ -30,7 +30,7 @@ function Navbar() {
       <main className="flex items-center gap-4">
         <ul className="hidden gap-4 md:flex">
           <li>
-            <Link className="link" href="home">
+            <Link className="link" href="/">
               home
             </Link>
           </li>
@@ -45,7 +45,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link className="link" href="home">
+            <Link className="link" href="#contact">
               contact
             </Link>
           </li>
@@ -108,12 +108,12 @@ function Navbar() {
             </div>
             <ul className=" flex flex-col gap-6 ">
               <li>
-                <Link className="side-link" href="home">
+                <Link className="side-link" href="/">
                   home
                 </Link>
               </li>
               <li>
-                <Link className="side-link" href="home">
+                <Link className="side-link" href="#about">
                   about
                 </Link>
               </li>
@@ -123,7 +123,7 @@ function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link className="side-link" href="home">
+                <Link className="side-link" href="#contact">
                   contact
                 </Link>
               </li>
