@@ -1,7 +1,34 @@
 import { motion } from "framer-motion"
 import { IoIosSend } from "react-icons/io"
+import emailjs from "@emailjs/browser"
+import { useRef } from "react"
+import toast from "react-hot-toast"
+
+const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
 function Contact() {
+  const form = useRef()
+
+  const toastSuccess = () => toast.success("Email has been sent")
+  const toastError = (err: string) => toast.error(err)
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (serviceId && templateId && publicKey && form.current) {
+      emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+        () => {
+          toastSuccess()
+        },
+        (error) => {
+          toastError(error.text)
+        },
+      )
+    } else toastError("Failed to send message")
+  }
+
   return (
     <main
       className="container mx-auto flex flex-col gap-4 px-4 py-16 xl:w-5/6"
@@ -39,6 +66,7 @@ function Contact() {
           </motion.p>
         </div>
         <motion.form
+          onSubmit={sendEmail}
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
@@ -47,27 +75,33 @@ function Contact() {
           <input
             placeholder="Name *"
             required
+            name="user_name"
             className="w-full rounded-lg bg-white p-3 outline-none dark:bg-slate-700"
           />
           <input
             placeholder="Email *"
             required
+            name="user_email"
             type="email"
             className="w-full rounded-lg bg-white p-3 outline-none dark:bg-slate-700"
           />
           <textarea
             rows={10}
             required
+            name="message"
             placeholder="Message *"
             className="w-full rounded-lg bg-white p-3 outline-none dark:bg-slate-700"
           />
 
-          <button
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            transition={{ ease: "easeOut", duration: 0.4 }}
+            whileTap={{ scale: 0.9 }}
             type="submit"
             className="flex items-center gap-1 self-center rounded-lg bg-white px-3 py-2 font-manrope text-lg font-semibold capitalize text-slate-500 shadow-md dark:bg-slate-700 dark:text-slate-50"
           >
             send <IoIosSend className="h-5 w-5" />
-          </button>
+          </motion.button>
         </motion.form>
       </div>
     </main>

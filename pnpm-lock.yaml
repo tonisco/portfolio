@@ -1,12 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@emailjs/browser': ^3.10.0
   '@types/node': 18.15.3
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@typescript-eslint/eslint-plugin': ^5.55.0
   '@typescript-eslint/parser': ^5.55.0
   autoprefixer: ^10.4.14
+  csstype: ^3.1.1
   eslint: 8.36.0
   eslint-config-airbnb: ^19.0.4
   eslint-config-airbnb-typescript: ^17.0.0
@@ -24,21 +26,25 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.2.5
   react: 18.2.0
   react-dom: 18.2.0
+  react-hot-toast: ^2.4.0
   react-icons: ^4.8.0
   react-typed: ^1.2.0
   tailwindcss: ^3.2.7
   typescript: 5.0.2
 
 dependencies:
+  '@emailjs/browser': 3.10.0
   '@types/node': 18.15.3
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
+  csstype: 3.1.1
   eslint: 8.36.0
   framer-motion: 10.6.1_biqbaboplfbrettd7655fr4n2y
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
   next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-hot-toast: 2.4.0_owo25xnefcwdq3zjgtohz6dbju
   react-icons: 4.8.0_react@18.2.0
   react-typed: 1.2.0_biqbaboplfbrettd7655fr4n2y
   typescript: 5.0.2
@@ -68,6 +74,11 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.11
     dev: true
+
+  /@emailjs/browser/3.10.0:
+    resolution: {integrity: sha512-pregUOBkSjjctQoAgn8DcSaeY4ypHjXAJEzWlJysM3RkQXw1ulavfHva3YYeAkxfJ7qbIhpyvRmhyQlgNG4GVg==}
+    engines: {node: '>=14.0.0'}
+    dev: false
 
   /@emotion/is-prop-valid/0.8.8:
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
@@ -1553,6 +1564,14 @@ packages:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
     dev: true
 
+  /goober/2.1.12_csstype@3.1.1:
+    resolution: {integrity: sha512-yXHAvO08FU1JgTXX6Zn6sYCUFfB/OJSX8HHjDSgerZHZmFKAb08cykp5LBw5QnmyMcZyPRMqkdyHUSSzge788Q==}
+    peerDependencies:
+      csstype: ^3.0.10
+    dependencies:
+      csstype: 3.1.1
+    dev: false
+
   /gopd/1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
     dependencies:
@@ -2316,6 +2335,20 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-hot-toast/2.4.0_owo25xnefcwdq3zjgtohz6dbju:
+    resolution: {integrity: sha512-qnnVbXropKuwUpriVVosgo8QrB+IaPJCpL8oBI6Ov84uvHZ5QQcTp2qg6ku2wNfgJl6rlQXJIQU5q+5lmPOutA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      goober: 2.1.12_csstype@3.1.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    transitivePeerDependencies:
+      - csstype
     dev: false
 
   /react-icons/4.8.0_react@18.2.0:

@@ -3,6 +3,7 @@ import Contact from "@/components/Contact"
 import Hero from "@/components/Hero"
 import Navbar from "@/components/Navbar"
 import { Acme, Manrope } from "next/font/google"
+import { Toaster } from "react-hot-toast"
 
 const acme = Acme({
   subsets: ["latin"],
@@ -17,6 +18,7 @@ export default function Home() {
     <div
       className={`${acme.variable} ${manrope.variable} bg-white dark:bg-slate-700`}
     >
+      <Toaster />
       <div className="flex h-screen flex-col">
         <Navbar />
         <Hero />
