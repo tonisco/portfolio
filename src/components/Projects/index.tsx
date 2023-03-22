@@ -1,16 +1,32 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { useState } from "react"
 import { HiOutlineArrowRight } from "react-icons/hi"
-import { projects } from "./projectDetails"
+import ProjectDetails from "./ProjectDetails"
+import { projects } from "./projectList"
 
 function Projects() {
   const isEven = (index: number) => index % 2 === 0
+
+  const [isOpen, setIsOpen] = useState(false)
+  const [id, setId] = useState<number>()
+
+  const close = () => {
+    setIsOpen(true)
+    setId(undefined)
+  }
+
+  const open = (projectId: number) => {
+    setId(projectId)
+    setIsOpen(true)
+  }
 
   return (
     <div
       className="container mx-auto flex flex-col gap-4 px-4 py-8 xl:w-5/6"
       id="projects"
     >
+      {id && <ProjectDetails isOpen={isOpen} close={close} projectId={id} />}
       <div className="flex">
         <motion.h1
           initial={{ opacity: 0, y: 100 }}
@@ -61,6 +77,7 @@ function Projects() {
                 transition={{ ease: "easeOut", duration: 0.4 }}
                 whileTap={{ gap: "4px", scale: 0.95 }}
                 type="button"
+                onClick={() => open(project.id)}
                 className="mt-6 flex items-center gap-2 self-start font-manrope text-base font-semibold capitalize tracking-wide text-blue-500"
               >
                 <p>see details </p>
