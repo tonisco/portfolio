@@ -1,26 +1,11 @@
-import { useEffect, useState } from "react"
-import { IoClose, IoMenu, IoMoon, IoSunny } from "react-icons/io5"
-import { AnimatePresence, motion, spring } from "framer-motion"
-import { useTheme } from "next-themes"
+import { useState } from "react"
+import { IoClose, IoMenu } from "react-icons/io5"
+import { AnimatePresence, motion } from "framer-motion"
+
 import Link from "next/link"
 
 function Navbar() {
   const [showSidebar, setShowSideBar] = useState(false)
-  const [isDark, setIsDark] = useState(true)
-
-  const { setTheme, theme } = useTheme()
-
-  const changeTheme = () => {
-    if (theme === "light") setTheme("dark")
-    else setTheme("light")
-  }
-
-  useEffect(() => {
-    if (theme) {
-      const usingDark = theme === "dark"
-      if (isDark !== usingDark) setIsDark(usingDark)
-    }
-  }, [isDark, theme])
 
   const setSidebar = (val: boolean) => setShowSideBar(val)
 
@@ -54,29 +39,6 @@ function Navbar() {
           className="block text-3xl text-slate-700 dark:text-white md:hidden"
           onClick={() => setSidebar(true)}
         />
-        <div
-          className={`flex h-8 w-12 cursor-pointer items-center justify-start rounded-full bg-slate-700 p-1 dark:bg-white ${
-            isDark && "justify-end"
-          }`}
-          onClick={changeTheme}
-        >
-          <motion.div
-            layout
-            transition={spring}
-            className="flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-md dark:bg-slate-700"
-          >
-            <motion.div
-              whileTap={{ rotate: 360 }}
-              className="flex items-center justify-center"
-            >
-              {isDark ? (
-                <IoMoon className="h-4 w-4 text-white" />
-              ) : (
-                <IoSunny className="h-4 w-4 text-yellow-300" />
-              )}
-            </motion.div>
-          </motion.div>
-        </div>
       </main>
       <AnimatePresence>
         {showSidebar && (

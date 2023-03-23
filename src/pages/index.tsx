@@ -1,5 +1,6 @@
 import About from "@/components/About"
 import Contact from "@/components/Contact"
+import DarkModeButton from "@/components/DarkModeButton"
 import Hero from "@/components/Hero"
 import Navbar from "@/components/Navbar"
 import Projects from "@/components/Projects"
@@ -20,10 +21,11 @@ Modal.setAppElement("#modals")
 export default function Home() {
   return (
     <div
-      className={`${acme.variable} ${manrope.variable} bg-white dark:bg-slate-700`}
+      className={`${acme.variable} ${manrope.variable} overflow-hidden bg-white dark:bg-slate-700`}
     >
       <div id="modals" />
       <Toaster />
+      <DarkModeButton />
       <div className="flex h-screen flex-col">
         <Navbar />
         <Hero />
