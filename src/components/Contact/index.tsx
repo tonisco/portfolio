@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { IoIosSend } from "react-icons/io"
+import { MdAlternateEmail, MdLocationPin, MdPhone } from "react-icons/md"
 import emailjs from "@emailjs/browser"
 import { useRef } from "react"
 import toast from "react-hot-toast"
@@ -64,6 +65,25 @@ function Contact() {
             Have any questions? Reach out to me from this contact form and I
             will get back to you shortly.
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+            className="flex flex-col gap-2 font-manrope text-base font-semibold tracking-wide text-slate-500 dark:text-slate-50 sm:text-lg"
+          >
+            <div className="flex items-center gap-2">
+              <MdAlternateEmail />
+              <p>tonyumeozulu@gmail.com</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <MdPhone />
+              <p>+2349091653652</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <MdLocationPin />
+              <p>Lagos, Nigeria</p>
+            </div>
+          </motion.div>
         </div>
         <motion.form
           onSubmit={sendEmail}
