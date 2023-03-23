@@ -1,13 +1,20 @@
 import { useState } from "react"
 import { IoClose, IoMenu } from "react-icons/io5"
 import { AnimatePresence, motion } from "framer-motion"
-
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 
 function Navbar() {
   const [showSidebar, setShowSideBar] = useState(false)
 
+  const { push } = useRouter()
+
   const setSidebar = (val: boolean) => setShowSideBar(val)
+
+  const sideBarNavigate = (id: string) => {
+    setShowSideBar(false)
+    push(id)
+  }
 
   return (
     <nav className="container mx-auto flex items-center justify-between py-8 px-4 xl:w-5/6">
@@ -70,24 +77,40 @@ function Navbar() {
             </div>
             <ul className=" flex flex-col gap-6 ">
               <li>
-                <Link className="side-link" href="/">
+                <button
+                  type="button"
+                  className="side-link"
+                  onClick={() => sideBarNavigate("#home")}
+                >
                   home
-                </Link>
+                </button>
               </li>
               <li>
-                <Link className="side-link" href="#about">
+                <button
+                  type="button"
+                  className="side-link"
+                  onClick={() => sideBarNavigate("#about")}
+                >
                   about
-                </Link>
+                </button>
               </li>
               <li>
-                <Link className="side-link" href="#projects">
+                <button
+                  type="button"
+                  className="side-link"
+                  onClick={() => sideBarNavigate("#projects")}
+                >
                   projects
-                </Link>
+                </button>
               </li>
               <li>
-                <Link className="side-link" href="#contact">
+                <button
+                  type="button"
+                  className="side-link"
+                  onClick={() => sideBarNavigate("#about")}
+                >
                   contact
-                </Link>
+                </button>
               </li>
             </ul>
           </motion.nav>
