@@ -33,7 +33,7 @@ function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ ease: "easeOut", duration: 0.5 }}
-          className="underline-text mb-4 w-auto font-manrope text-4xl font-bold text-slate-700 dark:text-white"
+          className="heading mb-4"
         >
           About
         </motion.h1>
@@ -43,7 +43,7 @@ function About() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ ease: "easeOut", duration: 0.5 }}
-        className="max-w-3xl font-manrope text-lg font-semibold tracking-wide text-slate-500 dark:text-slate-50"
+        className="max-w-3xl font-manrope text-base font-semibold tracking-wide text-slate-500 dark:text-slate-50 sm:text-lg"
       >
         I have always been fascinated at how lines of codes become beautiful
         websites and applications so I started with a web beginner course. Today
@@ -68,7 +68,7 @@ function About() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ ease: "easeOut", duration: 0.5 }}
-        className="flex max-w-3xl flex-wrap gap-4"
+        className="flex max-w-3xl flex-wrap gap-3 sm:gap-4"
       >
         <motion.div
           whileHover={{ scale: 1.1 }}

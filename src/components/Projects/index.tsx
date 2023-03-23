@@ -33,12 +33,12 @@ function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ ease: "easeOut", duration: 0.5 }}
-          className="underline-text w-auto font-manrope text-4xl font-bold text-slate-700 dark:text-white"
+          className="heading"
         >
           Projects
         </motion.h1>
       </div>
-      <div className="mt-10 flex flex-col gap-16">
+      <div className="mt-5 flex flex-col gap-16 sm:mt-10">
         {projects.map((project, i) => (
           <div
             key={project.id}
@@ -48,17 +48,17 @@ function Projects() {
               initial={{ opacity: 0, x: isEven(i) ? 200 : -200 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ ease: "easeOut", duration: 0.5 }}
-              className={`flex w-4/5 max-w-lg flex-1 flex-col gap-6 md:w-auto md:flex-1 ${
+              className={`flex w-11/12 max-w-lg flex-1 flex-col gap-4 sm:w-4/5 sm:gap-6 md:w-auto md:flex-1 ${
                 isEven(i) && "md:order-2"
               }`}
             >
-              <h1 className="mb-4 font-manrope text-3xl font-bold capitalize tracking-wide text-slate-700 dark:text-white">
+              <h1 className="font-manrope text-2xl font-bold capitalize tracking-wide text-slate-700 dark:text-white sm:mb-4 sm:text-3xl">
                 {project.name}
               </h1>
-              <p className="font-manrope text-lg font-semibold tracking-wide text-slate-500 dark:text-slate-300">
+              <p className="font-manrope text-base font-semibold tracking-wide text-slate-500 dark:text-slate-300 sm:text-lg">
                 {project.short_description}
               </p>
-              <div className="flex max-w-3xl flex-wrap gap-4">
+              <div className="flex max-w-3xl flex-wrap gap-2 sm:gap-4">
                 {project.majorLibraries.map((libraries) => (
                   <motion.div
                     whileHover={{ scale: 1.1 }}
@@ -66,7 +66,7 @@ function Projects() {
                     key={libraries}
                     className="cursor-default rounded-lg bg-stone-50 p-2 shadow dark:bg-slate-800"
                   >
-                    <p className="font-manrope text-sm font-medium capitalize text-slate-500 dark:text-slate-50">
+                    <p className="font-manrope text-xs font-medium capitalize text-slate-500 dark:text-slate-50 sm:text-sm">
                       {libraries}
                     </p>
                   </motion.div>
@@ -78,7 +78,7 @@ function Projects() {
                 whileTap={{ gap: "4px", scale: 0.95 }}
                 type="button"
                 onClick={() => open(project.id)}
-                className="mt-6 flex items-center gap-2 self-start font-manrope text-base font-semibold capitalize tracking-wide text-blue-500"
+                className="mt-3 flex items-center gap-2 self-start font-manrope text-base font-semibold capitalize tracking-wide text-blue-500 sm:mt-6"
               >
                 <p>see details </p>
                 <HiOutlineArrowRight />
@@ -88,7 +88,7 @@ function Projects() {
               initial={{ opacity: 0, x: isEven(i) ? -200 : 200 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ ease: "easeOut", duration: 0.5 }}
-              className="relative h-[400px] w-4/5 max-w-lg overflow-hidden rounded-md md:w-auto md:flex-1"
+              className="relative h-[200px] w-11/12 max-w-lg overflow-hidden rounded-md sm:h-[400px] sm:w-4/5 md:w-auto md:flex-1"
             >
               <Image
                 src={project.image}

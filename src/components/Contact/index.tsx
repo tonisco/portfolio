@@ -39,7 +39,7 @@ function Contact() {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
-          className="underline-text mb-8 w-auto font-manrope text-4xl font-bold text-slate-700 dark:text-white"
+          className="heading mb-8"
         >
           Contact
         </motion.h1>
@@ -51,7 +51,7 @@ function Contact() {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ ease: "easeOut", duration: 0.5 }}
-            className="w-auto font-manrope text-2xl font-bold text-slate-700 dark:text-slate-50"
+            className="w-auto font-manrope text-xl font-bold text-slate-700 dark:text-slate-50 sm:text-2xl"
           >
             If you like what you see, let's work together
           </motion.h3>
@@ -59,7 +59,7 @@ function Contact() {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ ease: "easeOut", duration: 0.5 }}
-            className="font-manrope text-lg font-semibold tracking-wide text-slate-500 dark:text-slate-50"
+            className="font-manrope text-base font-semibold tracking-wide text-slate-500 dark:text-slate-50 sm:text-lg"
           >
             Have any questions? Reach out to me from this contact form and I
             will get back to you shortly.
@@ -70,7 +70,7 @@ function Contact() {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
-          className="flex max-w-lg flex-1 flex-col gap-4 rounded-2xl bg-slate-100 p-8 dark:bg-slate-500 md:px-4 xl:p-8"
+          className="flex max-w-lg flex-1 flex-col gap-4 rounded-2xl bg-slate-100 p-4 dark:bg-slate-500 sm:p-8 md:px-4 xl:p-8"
         >
           <input
             placeholder="Name *"

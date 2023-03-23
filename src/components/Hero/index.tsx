@@ -19,7 +19,7 @@ function Hero() {
             onComplete={() => {
               typedRef?.cursor.remove()
             }}
-            className="inline-block text-blue-700 dark:text-blue-500"
+            className="inline-block text-blue-600 dark:text-blue-400"
           />
         </p>
 
