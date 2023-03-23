@@ -7,6 +7,7 @@ import Link from "next/link"
 function Navbar() {
   const [showSidebar, setShowSideBar] = useState(false)
   const [fixedNav, setFixedNav] = useState(false)
+  const [active, setActive] = useState("home")
 
   const { push } = useRouter()
 
@@ -28,6 +29,34 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleFixed)
   }, [fixedNav])
 
+  useEffect(() => {
+    const changeLinkColor = (e: Element) => {
+      setActive(e.id)
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            changeLinkColor(entry.target)
+          }
+        })
+      },
+      { threshold: 0.5 },
+    )
+
+    const ids = ["#home", "#about", "#projects", "#contact"]
+
+    ids.forEach((id) => io.observe(document.querySelector(id)!))
+
+    return () => {
+      ids.forEach((id) => io.unobserve(document.querySelector(id)!))
+      io.disconnect()
+    }
+  }, [])
+
+  const isActive = (id: string) =>
+    id === active ? "!text-blue-600 !dark:text-blue-400" : ""
+
   return (
     <nav>
       <div
@@ -40,22 +69,25 @@ function Navbar() {
           <main className="flex items-center gap-4">
             <ul className="hidden gap-4 md:flex">
               <li>
-                <Link className="link" href="/">
+                <Link className={`link ${isActive("home")}`} href="/">
                   home
                 </Link>
               </li>
               <li>
-                <Link className="link" href="#about">
+                <Link className={`link ${isActive("about")}`} href="#about">
                   about
                 </Link>
               </li>
               <li>
-                <Link className="link" href="#projects">
+                <Link
+                  className={`link ${isActive("projects")}`}
+                  href="#projects"
+                >
                   projects
                 </Link>
               </li>
               <li>
-                <Link className="link" href="#contact">
+                <Link className={`link ${isActive("contact")}`} href="#contact">
                   contact
                 </Link>
               </li>
@@ -99,7 +131,7 @@ function Navbar() {
               <li>
                 <button
                   type="button"
-                  className="side-link"
+                  className={`side-link ${isActive("home")}`}
                   onClick={() => sideBarNavigate("#home")}
                 >
                   home
@@ -108,7 +140,7 @@ function Navbar() {
               <li>
                 <button
                   type="button"
-                  className="side-link"
+                  className={`side-link ${isActive("about")}`}
                   onClick={() => sideBarNavigate("#about")}
                 >
                   about
@@ -117,7 +149,7 @@ function Navbar() {
               <li>
                 <button
                   type="button"
-                  className="side-link"
+                  className={`side-link ${isActive("projects")}`}
                   onClick={() => sideBarNavigate("#projects")}
                 >
                   projects
@@ -126,7 +158,7 @@ function Navbar() {
               <li>
                 <button
                   type="button"
-                  className="side-link"
+                  className={`side-link ${isActive("about")}`}
                   onClick={() => sideBarNavigate("#about")}
                 >
                   contact

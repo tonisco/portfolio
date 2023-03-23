@@ -26,7 +26,7 @@ export default function Home() {
       <div id="modals" />
       <Toaster />
       <DarkModeButton />
-      <div className="flex h-screen flex-col">
+      <div id="home" className="flex h-screen flex-col">
         <Navbar />
         <Hero />
       </div>

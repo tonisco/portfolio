@@ -7,11 +7,11 @@ html {
 }
 
 .link {
-  @apply px-4 font-manrope text-base font-bold capitalize text-slate-700 dark:text-slate-50;
+  @apply px-4 font-manrope text-base font-bold capitalize text-slate-700 transition-all duration-300 dark:text-slate-50;
 }
 
 .side-link {
-  @apply font-manrope text-base font-bold capitalize text-slate-700 dark:text-slate-50;
+  @apply font-manrope text-base font-bold capitalize text-slate-700 transition-all duration-300 dark:text-slate-50;
 }
 
 .underline-text {
