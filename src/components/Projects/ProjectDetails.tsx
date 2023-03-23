@@ -20,7 +20,7 @@ function ProjectDetails({ isOpen, close, projectId }: Props) {
       <Modal
         isOpen={isOpen}
         overlayClassName="modal-overlay"
-        className="relative flex max-h-[85%] w-full max-w-[85%] flex-col justify-between gap-5 overflow-y-auto rounded-lg bg-white p-4 outline-none dark:bg-slate-700 sm:gap-10 sm:p-8 md:flex-row xl:max-w-[75%]"
+        className="relative flex max-h-[85%] w-full max-w-[85%] flex-col justify-between gap-5 overflow-y-auto rounded-lg bg-white px-4 py-6 outline-none dark:bg-slate-700 sm:gap-10 sm:p-8 md:flex-row xl:max-w-[75%]"
         shouldCloseOnOverlayClick
         onRequestClose={close}
       >

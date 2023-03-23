@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .link {
   @apply px-4 font-manrope text-base font-bold capitalize text-slate-700 dark:text-slate-50;
 }

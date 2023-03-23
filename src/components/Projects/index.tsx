@@ -23,7 +23,7 @@ function Projects() {
 
   return (
     <div
-      className="container mx-auto flex flex-col gap-4 px-4 py-8 xl:w-5/6"
+      className="container mx-auto flex scroll-m-14 flex-col gap-4 px-4 py-8 xl:w-5/6"
       id="projects"
     >
       {id && <ProjectDetails isOpen={isOpen} close={close} projectId={id} />}
