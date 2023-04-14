@@ -40,6 +40,29 @@ export const projects = [
     majorLibraries: ["next js", "react", "javascript", "styled components"],
   },
   {
+    id: 4,
+    name: "jobfindo",
+    githubLink: "https://github.com/tonisco/Jobfindo",
+    liveLink: "https://jobfindo.onrender.com/",
+    image: "/images/jobfindo.jpeg",
+    image_alt: "jobfindo",
+    description: `A job posting web app for both employers and employees.
+    Employers get a simple admin dashboard to create, edit and delete jobs for prospective employees.
+    They also get to see the applicants and their information as well as the cv they uploaded which they can download and for further viewing.
+    People who are searching for jobs get the chance to see all available jobs and choose which to apply to and send their cv.`,
+    short_description:
+      "A simple job posting web app where applicants can apply and upload their cv to their future employers",
+    majorLibraries: [
+      "express",
+      "mongodb",
+      "typescript",
+      "redux",
+      "react",
+      "tailwind",
+      "docker",
+    ],
+  },
+  {
     id: 5,
     name: "peoplebook",
     githubLink: "https://github.com/tonisco/facebook_clone",
