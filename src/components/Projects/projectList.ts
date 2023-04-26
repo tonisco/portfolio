@@ -1,6 +1,43 @@
 // eslint-disable-next-line import/prefer-default-export
 export const projects = [
   {
+    id: 1,
+    name: "mealy",
+    githubLink: "https://github.com/tonisco/Mealy",
+    liveLink: "https://mealy-kappa.vercel.app/",
+    image: "/images/mealy.jpeg",
+    image_alt: "mealy",
+    description: `A complete fullstack project made with turbo-repo that comprises of everything from a restaurant displaying food items to a driver picking up one of the food items and delivering it to a customer that ordered it.
+    The turbo-repo project includes a react website for the restaurant, an expo react native app for the driver, an expo react native app for the customers and an express api backend for all the projects.
+    The restaurant web app is where restaurants create their profile, list their food products and manage their orders with ease as wells view their sales and most sold food item.
+    The driver app is an app that the driver uses to find available orders ready for pick up and the delivery location. He uses the directions on the app as a guide to deliver the food items
+    The food app is the app the customers use to view the menus of all the restaurants around them, order food items from their favorite restaurants and track and manage their orders.
+    The api backend manages all the action and interactions of all this apps and also store all this data thr database`,
+    short_description:
+      "A complete project written a turbo-repo environment for start-up organization that specializes in providing local restaurants a platform to sell their foods, job creation through the platform for drivers to deliver those foods and a platform where users can browse available restaurants around them and purchase food have have it delivered to them.",
+    majorLibraries: [
+      "turbo-repo",
+      "express",
+      "typescript",
+      "trpc",
+      "react-query",
+      "prisma",
+      "postgres",
+      "docker",
+      "expo",
+      "react-native",
+      "react",
+      "vite",
+      "zustand",
+      "mapbox",
+      "zod",
+      "tailwind",
+      "nativewind",
+      "chart.js",
+      "jest",
+    ],
+  },
+  {
     id: 2,
     name: "loftyshop",
     githubLink: "https://github.com/tonisco/LoftyShop",

@@ -20,7 +20,7 @@ function ProjectDetails({ isOpen, close, projectId }: Props) {
       <Modal
         isOpen={isOpen}
         overlayClassName="modal-overlay"
-        className="relative flex max-h-[85%] w-full max-w-[85%] flex-col justify-between gap-5 overflow-y-auto rounded-lg bg-white px-4 py-6 outline-none dark:bg-slate-700 sm:gap-10 sm:p-8 md:flex-row xl:max-w-[75%]"
+        className="relative flex max-h-[85%] w-full max-w-[85%] flex-col gap-5 overflow-y-auto rounded-lg bg-white px-4 py-6 outline-none dark:bg-slate-700 sm:gap-10 sm:p-8 md:flex-row xl:max-w-[75%]"
         shouldCloseOnOverlayClick
         onRequestClose={close}
       >
@@ -40,7 +40,7 @@ function ProjectDetails({ isOpen, close, projectId }: Props) {
           <h2 className="font-manrope text-2xl font-bold capitalize tracking-wide text-slate-700 dark:text-white sm:mb-4 sm:text-3xl">
             {selected.name}
           </h2>
-          <p className="whitespace-pre-line font-manrope text-base font-semibold tracking-wide text-slate-500 dark:text-slate-300 sm:text-lg">
+          <p className="whitespace-pre-wrap font-manrope text-base font-semibold tracking-wide text-slate-500 dark:text-slate-300 sm:text-lg">
             {selected.description}
           </p>
           <div className="flex max-w-3xl flex-wrap gap-3 sm:gap-4">
@@ -57,7 +57,7 @@ function ProjectDetails({ isOpen, close, projectId }: Props) {
               </motion.div>
             ))}
           </div>
-          <div className="mt-2 flex gap-8">
+          <div className="my-2 flex gap-8">
             <motion.a
               whileHover={{ scale: 1.1 }}
               transition={{ ease: "easeOut", duration: 0.4 }}
