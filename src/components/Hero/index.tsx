@@ -51,7 +51,7 @@ function Hero() {
             <FaGithub className="text-2xl text-slate-700 dark:text-white" />
           </a>
           <a
-            href="https://www.linkedin.com/in/ugonna-anthony-532605ab"
+            href="https://www.linkedin.com/in/anthony-umeozulu-532605ab/"
             target="_blank"
             rel="noreferrer"
           >
