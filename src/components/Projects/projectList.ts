@@ -41,7 +41,7 @@ export const projects = [
     id: 2,
     name: "loftyshop",
     githubLink: "https://github.com/tonisco/LoftyShop",
-    liveLink: "https://lofty-shop.onrender.com/",
+    liveLink: "https://lofty-shop.vercel.app/",
     image: "/images/loftyshop.jpeg",
     image_alt: "loftyshop",
     description: `A production ready eCommerce with paypal and paystack integration as a payment medium.
